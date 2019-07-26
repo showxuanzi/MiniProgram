@@ -8,6 +8,12 @@ Page({
     ],
     count: 0
   },
+  onPageScroll(event){
+      console.log("页面滚动");
+  },
+  onPullDownRefresh(){
+      console.log("下拉刷新")
+  },
   handleBtnClick(){
     // 这样操作不会刷新界面
     // this.data.count++;
@@ -20,5 +26,9 @@ Page({
     this.setData({
       count: this.data.count - 1
     })
+  },
+  handleGetUserInfo(event){
+      console.log('ddddd');
+      console.log(event);
   }
 })

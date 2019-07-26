@@ -4,9 +4,19 @@
 <view>我的年龄：{{age}}</view>
 
 <!-- 列表展示 wx:for -->
-<view wx:for="{{list}}">{{item.name}}---{{item.age}}</view>
+<view wx:for="{{list}}" wx:key="{{item.id}}">{{item.name}}---{{item.age}}</view>
 
 <!-- 事件监听，改变data -->
 <view>当前计数：{{count}}</view>
 <button size="mini" bindtap="handleBtnClick">+</button>
 <button size="mini" bindtap="handleSubtraction">-</button>
+<view>
+<!-- open-type="getUserInfo" 获取用户信息必须添加该属性 -->
+<!-- bindgetuserinfo 并且使用该事件获取 -->
+    <button size="mini" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">获取授权</button>
+</view>
+<!-- 使用如下组件直接展示用户信息 -->
+<open-data type="userNickName"></open-data>
+<open-data type="userAvatarUrl"></open-data>
+
+
